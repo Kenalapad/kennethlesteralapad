@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-// import keepaImg from "./assets/keepa.png";
-// import sellerampImg from "./assets/selleramp.jpg";
+import keepaImg from "./assets/keepa.png";
+import sellerampImg from "./assets/selleramp.jpg";
 
-// interface Project {
-//   id: number;
-//   title: string;
-//   description: string;
-//   tech?: string[];
-//   github?: string;
-//   demo?: string;
-//   img?: string;
-// }
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  tech?: string[];
+  github?: string;
+  demo?: string;
+  img?: string;
+}
 
 interface Skill {
   category: string;
@@ -23,7 +23,7 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "contact"];
+      const sections = ["home", "about", "projects", "skills", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -43,7 +43,7 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  /* const projects: Project[] = [
+  const projects: Project[] = [
     {
       id: 1,
       img: keepaImg,
@@ -73,7 +73,7 @@ function App() {
     //   github: "https://github.com",
     //   demo: "https://demo.com",
     // },
-  ]; */
+  ];
 
   const skills: Skill[] = [
     {
@@ -99,7 +99,7 @@ function App() {
             Portfolio
           </a>
           <ul className="nav-links">
-            {["home", "about", "skills", "contact"].map((section) => (
+            {["home", "about", "projects", "skills", "contact"].map((section) => (
               <li key={section}>
                 <button
                   className={activeSection === section ? "active" : ""}
@@ -133,6 +133,9 @@ function App() {
             </p>
             <p></p>
             <div className="hero-buttons">
+              <button onClick={() => scrollToSection("projects")}>
+                View Work
+              </button>
               <button onClick={() => scrollToSection("contact")}>
                 Get in Touch
               </button>
@@ -184,7 +187,8 @@ function App() {
           </div>
         </section>
 
-        {/*
+        <div className="ticks"></div>
+
         <section id="projects" className="projects-section">
           <h2>Featured</h2>
           <div className="projects-grid">
@@ -234,7 +238,6 @@ function App() {
         </section>
 
         <div className="ticks"></div>
-        */}
 
         <section id="skills" className="skills-section">
           <h2>Skills & Tools</h2>
