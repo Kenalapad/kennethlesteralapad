@@ -119,7 +119,7 @@ function App() {
         <section id="home" className="hero-section">
           <div className="hero-content">
             <img
-              src="public/profile.jpg"
+              src="/profile.jpg"
               alt="Kenneth Lester Alapad"
               className="w-25 pb-3"
             />
