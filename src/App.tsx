@@ -99,18 +99,16 @@ function App() {
             Portfolio
           </a>
           <ul className="nav-links">
-            {["home", "about", "skills", "contact"].map(
-              (section) => (
-                <li key={section}>
-                  <button
-                    className={activeSection === section ? "active" : ""}
-                    onClick={() => scrollToSection(section)}
-                  >
-                    {section.charAt(0).toUpperCase() + section.slice(1)}
-                  </button>
-                </li>
-              ),
-            )}
+            {["home", "about", "skills", "contact"].map((section) => (
+              <li key={section}>
+                <button
+                  className={activeSection === section ? "active" : ""}
+                  onClick={() => scrollToSection(section)}
+                >
+                  {section.charAt(0).toUpperCase() + section.slice(1)}
+                </button>
+              </li>
+            ))}
           </ul>
         </nav>
       </header>
