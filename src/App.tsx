@@ -99,16 +99,18 @@ function App() {
             Portfolio
           </a>
           <ul className="nav-links">
-            {["home", "about", "projects", "skills", "contact"].map((section) => (
-              <li key={section}>
-                <button
-                  className={activeSection === section ? "active" : ""}
-                  onClick={() => scrollToSection(section)}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </button>
-              </li>
-            ))}
+            {["home", "about", "projects", "skills", "contact"].map(
+              (section) => (
+                <li key={section}>
+                  <button
+                    className={activeSection === section ? "active" : ""}
+                    onClick={() => scrollToSection(section)}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                </li>
+              ),
+            )}
           </ul>
         </nav>
       </header>
@@ -117,7 +119,7 @@ function App() {
         <section id="home" className="hero-section">
           <div className="hero-content">
             <img
-              src="src/assets/profile.jpg"
+              src="public/profile.jpg"
               alt="Kenneth Lester Alapad"
               className="w-25 pb-3"
             />
